@@ -20,3 +20,14 @@ function agregarAmigo(){ // Implementamos la función para agregar los nombres d
 
 
 }
+
+function actualizarLista(){ // Implementamos la función para actualizar la lista de amigos
+    const listaAmigoUl = document.getElementById("listaAmigos")
+    listaAmigoUl.innerHTML = "";
+
+    amigos.forEach(amigo => {
+        const li = document.createElement("li");
+        li.textContent = amigo;
+        listaAmigoUl.appendChild(li);
+    });
+}
