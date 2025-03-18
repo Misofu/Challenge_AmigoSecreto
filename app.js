@@ -31,3 +31,21 @@ function actualizarLista(){ // Implementamos la función para actualizar la list
         listaAmigoUl.appendChild(li);
     });
 }
+
+function sortearAmigo() {  // Implementamos la función para sortear los amigos
+    if (amigos.length === 0) {
+        alert("No hay nombres para sortear. Por favor agregar un nombre.");
+        return
+    }
+const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+
+const amigoSorteado = amigos[indiceAleatorio];
+    
+const resultadoUl = document.getElementById("resultado");
+resultadoUl.innerHTML = `<li>${amigoSorteado}</li>`;
+}
+
+document.addEventListener('DOMContentLoaded',() => {
+    document.getElementById("btnAdicionar").addEventListener("click",agregarAmigo)
+    document.getElementById("btnSortear").addEventListener("click",sortearAmigo);
+})
